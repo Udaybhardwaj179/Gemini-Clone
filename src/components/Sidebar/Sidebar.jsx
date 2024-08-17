@@ -6,6 +6,10 @@ const Sidebar = () => {
 
   const [extended, setExtended] = useState(false)
   const {onSent,prevPrompts,setRecentPrompt} = useContext(Context)
+  const loadPrompt=async(prompt)=>{
+    setRecentPrompt(prompt)
+   await onSent(prompt)
+  }
   return (
 
     <div className='sidebar'>
